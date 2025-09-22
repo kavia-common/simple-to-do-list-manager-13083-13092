@@ -33,7 +33,7 @@
 .abs {
   position: absolute;
 }
-.fn(x, y) {} /* placeholder to signal we are explicitly mapping values */
+/* placeholder removed */
 
 /* Top group coordinates normalized */
 .top-back-wrap {
