@@ -1,0 +1,485 @@
+@import url("./common.css");
+
+/* Screen base */
+.screen-add-new-items-602-1027 {
+  position: relative;
+  width: 375px;
+  height: 983px;
+  background: var(--color-ffffff); /* background.type solid color_ffffff */
+  overflow: hidden;
+}
+
+/* Root frame visual (style_44 background white radius 25) - we mirror as a full container panel */
+.screen-add-new-items-602-1027 .root-panel {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 375px;
+  height: 983px;
+  background: var(--color-ffffff);
+  border-radius: 25px;
+}
+
+/* Top bar group (x:1454 -> relative to frame; we translate positions relative to root (0,0)):
+   In Figma, the root frame's x,y are absolute on canvas; all children coordinates are absolute canvas too.
+   To reproduce pixel perfect inside our 375x983 artboard, we normalize by subtracting root.x=1454 and root.y=973. */
+:root {
+  /* Offsets for normalization */
+  --root-x: 1454;
+  --root-y: 973;
+}
+
+/* Helper to place any node at figma absolute coordinates normalized into screen */
+.abs {
+  position: absolute;
+}
+.fn(x, y) {} /* placeholder to signal we are explicitly mapping values */
+
+/* Top group coordinates normalized */
+.top-back-wrap {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1023px - var(--root-y) * 1px);
+  width: 327px;
+  height: 45px;
+}
+.top-back-wrap .reset {
+  left: calc(1739px - var(--root-x) * 1px);
+  top: calc(1036px - var(--root-y) * 1px);
+  width: 42px;
+  height: 17px;
+  font-family: var(--font-sen);
+  font-size: var(--typo-252-size, 14px);
+  font-weight: 400;
+  line-height: 16.84375px;
+  letter-spacing: 0px;
+  color: var(--color-fb6d3a);
+}
+.top-back-wrap .back-circle {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1023px - var(--root-y) * 1px);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--color-ecf0f4); /* style_67 */
+}
+.top-back-wrap .back-icon {
+  left: calc(1474px - var(--root-x) * 1px);
+  top: calc(1040px - var(--root-y) * 1px);
+  width: 5px;
+  height: 10px;
+  border-left: 2px solid var(--color-32343e); /* style_68 */
+  border-bottom: 2px solid var(--color-32343e);
+  transform: rotate(45deg);
+  background: transparent;
+}
+.top-back-wrap .title {
+  left: calc(1515px - var(--root-x) * 1px);
+  top: calc(1033px - var(--root-y) * 1px);
+  width: 126px;
+  height: 22px;
+  font-family: var(--font-sen);
+  font-size: var(--typo-123-size);
+  font-weight: var(--typo-123-weight);
+  line-height: var(--typo-123-line);
+  letter-spacing: 0;
+  color: var(--typo-123-color);
+  text-align: left;
+}
+
+/* Item name group */
+.item-name-group {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1092px - var(--root-y) * 1px);
+  width: 327px;
+  height: 74px;
+}
+.item-name-group .label {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1092px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-125-size);
+  font-weight: var(--typo-125-weight);
+  line-height: var(--typo-125-line);
+  letter-spacing: var(--typo-125-letter);
+  color: var(--typo-125-color);
+}
+.item-name-group .input-box {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1116px - var(--root-y) * 1px);
+  width: 327px;
+  height: 50px;
+  background: var(--color-fdfdfd);
+  border: 1px solid var(--color-e8eaed);
+  border-radius: 10px; /* style_318 */
+}
+.item-name-group .input-text {
+  left: calc(1470px - var(--root-x) * 1px);
+  top: calc(1134px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: 12px; /* typo_251 size */
+  font-weight: 400;
+  line-height: 20px; /* typo_251 line */
+  letter-spacing: 0.3px; /* typo_251 letter */
+  color: var(--color-9c9ba6);
+}
+
+/* Upload photo/video group */
+.upload-group {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1186px - var(--root-y) * 1px);
+  width: 381px;
+  height: 133px;
+}
+.upload-group .label {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1186px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-125-size);
+  font-weight: var(--typo-125-weight);
+  line-height: var(--typo-125-line);
+  color: var(--typo-125-color);
+}
+
+/* Three upload tiles: left (98a8b8 rounded 20), middle (fdfdfd), right (fdfdfd) each with add circle */
+.upload-group .tile-left {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1218px - var(--root-y) * 1px);
+  width: 111px;
+  height: 101px;
+  background: var(--color-98a8b8);
+  border-radius: 20px; /* style_309 */
+}
+.upload-group .tile-mid {
+  left: calc(1589px - var(--root-x) * 1px);
+  top: calc(1218px - var(--root-y) * 1px);
+  width: 111px;
+  height: 101px;
+  background: var(--color-fdfdfd);
+  border: 1px solid var(--color-e8eaed);
+  border-radius: 10px; /* style_318 */
+}
+.upload-group .tile-right {
+  left: calc(1724px - var(--root-x) * 1px);
+  top: calc(1218px - var(--root-y) * 1px);
+  width: 111px;
+  height: 101px;
+  background: var(--color-fdfdfd);
+  border: 1px solid var(--color-e8eaed);
+  border-radius: 10px; /* style_318 */
+}
+/* Add circular button inside mid/right tiles */
+.upload-group .add-circle {
+  width: 41.481052px;
+  height: 41.481052px;
+  border-radius: 50%;
+  background: rgba(82, 59, 177, 0.1); /* style_319 */
+}
+.upload-group .add-circle.mid {
+  left: calc(1624px - var(--root-x) * 1px);
+  top: calc(1231px - var(--root-y) * 1px);
+}
+.upload-group .add-circle.right {
+  left: calc(1759px - var(--root-x) * 1px);
+  top: calc(1231px - var(--root-y) * 1px);
+}
+/* Plus icon strokes (style_320: border color 523bb1, width 1.2px). We emulate with borders */
+.upload-group .plus-h,
+.upload-group .plus-v {
+  position: absolute;
+  background: var(--color-523bb1);
+}
+.upload-group .plus-h {
+  height: 1.2px;
+  width: 22px;
+}
+.upload-group .plus-v {
+  width: 1.2px;
+  height: 17px;
+}
+.upload-group .plus-mid-h { left: calc(1633.735px - var(--root-x) * 1px); top: calc(1251.741px - var(--root-y) * 1px); }
+.upload-group .plus-mid-v { left: calc(1640.741px - var(--root-x) * 1px); top: calc(1242.743px - var(--root-y) * 1px); }
+.upload-group .plus-right-h { left: calc(1768.735px - var(--root-x) * 1px); top: calc(1251.741px - var(--root-y) * 1px); }
+.upload-group .plus-right-v { left: calc(1775.741px - var(--root-x) * 1px); top: calc(1242.743px - var(--root-y) * 1px); }
+
+.upload-group .add-label-mid {
+  left: calc(1626px - var(--root-x) * 1px);
+  top: calc(1282.063px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-249-size);
+  font-weight: var(--typo-249-weight);
+  line-height: var(--typo-249-line);
+  color: var(--typo-249-color);
+}
+.upload-group .add-label-right {
+  left: calc(1761px - var(--root-x) * 1px);
+  top: calc(1282.063px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-249-size);
+  font-weight: var(--typo-249-weight);
+  line-height: var(--typo-249-line);
+  color: var(--typo-249-color);
+}
+
+/* Price group */
+.price-group {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1339px - var(--root-y) * 1px);
+  width: 327px;
+  height: 74px;
+}
+.price-group .label {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1339px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-125-size);
+  font-weight: var(--typo-125-weight);
+  line-height: var(--typo-125-line);
+  color: var(--typo-125-color);
+}
+.price-group .price-box {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1371px - var(--root-y) * 1px);
+  width: 115px;
+  height: 42px;
+  background: var(--color-fdfdfd);
+  border: 1px solid var(--color-e8eaed);
+  border-radius: 10px; /* style_318 */
+}
+.price-group .price-text {
+  left: calc(1469px - var(--root-x) * 1px);
+  top: calc(1384px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-247-size);
+  font-weight: var(--typo-247-weight);
+  line-height: var(--typo-247-line);
+  letter-spacing: var(--typo-247-letter);
+  color: var(--typo-247-color);
+}
+.price-group .option-pickup-box {
+  left: calc(1597px - var(--root-x) * 1px);
+  top: calc(1384px - var(--root-y) * 1px);
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-fb6d3a); /* style_323 */
+  border-radius: 3px;
+  background: transparent;
+}
+.price-group .option-pickup-text {
+  left: calc(1625px - var(--root-x) * 1px);
+  top: calc(1383px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-250-size);
+  font-weight: var(--typo-250-weight);
+  line-height: var(--typo-250-line);
+  color: var(--typo-250-color);
+}
+.price-group .option-pickup-check {
+  left: calc(1602px - var(--root-x) * 1px);
+  top: calc(1390px - var(--root-y) * 1px);
+  width: 8px;
+  height: 6px;
+  border-left: 1.5px solid var(--color-fb6d3a); /* style_65 */
+  border-bottom: 1.5px solid var(--color-fb6d3a);
+  transform: rotate(-45deg);
+  background: transparent;
+}
+.price-group .option-delivery-box {
+  left: calc(1700px - var(--root-x) * 1px);
+  top: calc(1384px - var(--root-y) * 1px);
+  width: 18px;
+  height: 18px;
+  background: var(--color-fdfdfd); /* style_322 bg */
+  border: 1px solid var(--color-e8eaed);
+  border-radius: 3px;
+}
+.price-group .option-delivery-text {
+  left: calc(1728px - var(--root-x) * 1px);
+  top: calc(1383px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-250-size);
+  font-weight: var(--typo-250-weight);
+  line-height: var(--typo-250-line);
+  color: var(--typo-250-color);
+}
+
+/* Ingredients section label */
+.ingridents-label {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1433px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-125-size);
+  font-weight: var(--typo-125-weight);
+  line-height: var(--typo-125-line);
+  color: var(--typo-125-color);
+}
+
+/* Ingredients chips grid - each chip: square 50 border radius 100 (circle) + label below */
+.ing-row-title-basic {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1468px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-120-size);
+  font-weight: var(--typo-120-weight);
+  line-height: var(--typo-120-line);
+  letter-spacing: var(--typo-120-letter);
+  color: var(--typo-120-color);
+}
+.ing-see-all-basic {
+  left: calc(1723px - var(--root-x) * 1px);
+  top: calc(1468px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-247-size);
+  font-weight: var(--typo-247-weight);
+  line-height: var(--typo-247-line);
+  letter-spacing: var(--typo-247-letter);
+  color: var(--color-9c9ba6);
+}
+.ing-see-all-basic-arrow {
+  left: calc(1775px - var(--root-x) * 1px);
+  top: calc(1475px - var(--root-y) * 1px);
+  width: 6px; height: 3px;
+  border-bottom: 1.2px solid var(--color-9c9ba6);
+  transform: rotate(0deg);
+}
+
+/* Basic chips: Salt, Chicken, Onion, Garlic, Pappers, Ginger */
+.chip-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px; /* style_316 */
+  background: var(--color-fdfdfd);
+  border: 1px solid var(--color-e8eaed);
+}
+.chip-label {
+  font-family: var(--font-sen);
+  font-size: var(--typo-248-size);
+  font-weight: var(--typo-248-weight);
+  line-height: var(--typo-248-line);
+  letter-spacing: 0.22px;
+  color: var(--color-9c9ba6);
+}
+
+/* Salt */
+.chip-salt { left: calc(1454px - var(--root-x)*1px); top: calc(1497px - var(--root-y)*1px); }
+.chip-salt-label { left: calc(1469px - var(--root-x)*1px); top: calc(1554px - var(--root-y)*1px); }
+/* Chicken */
+.chip-chicken { left: calc(1516px - var(--root-x)*1px); top: calc(1497px - var(--root-y)*1px); }
+.chip-chicken-label { left: calc(1520px - var(--root-x)*1px); top: calc(1554px - var(--root-y)*1px); }
+/* Onion */
+.chip-onion { left: calc(1578px - var(--root-x)*1px); top: calc(1497px - var(--root-y)*1px); }
+.chip-onion-label { left: calc(1587px - var(--root-x)*1px); top: calc(1554px - var(--root-y)*1px); }
+/* Garlic */
+.chip-garlic { left: calc(1640px - var(--root-x)*1px); top: calc(1497px - var(--root-y)*1px); }
+.chip-garlic-label { left: calc(1649px - var(--root-x)*1px); top: calc(1554px - var(--root-y)*1px); }
+/* Pappers */
+.chip-pappers { left: calc(1702px - var(--root-x)*1px); top: calc(1497px - var(--root-y)*1px); background: var(--color-ffebe4); border: 1px solid var(--color-e8eaed); }
+.chip-pappers-label { left: calc(1705px - var(--root-x)*1px); top: calc(1554px - var(--root-y)*1px); }
+/* Ginger */
+.chip-ginger { left: calc(1764px - var(--root-x)*1px); top: calc(1497px - var(--root-y)*1px); }
+.chip-ginger-label { left: calc(1771px - var(--root-x)*1px); top: calc(1554px - var(--root-y)*1px); }
+
+/* Fruit section */
+.ing-row-title-fruit {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1591px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-120-size);
+  font-weight: var(--typo-120-weight);
+  line-height: var(--typo-120-line);
+  letter-spacing: var(--typo-120-letter);
+  color: var(--typo-120-color);
+}
+.ing-see-all-fruit {
+  left: calc(1724px - var(--root-x) * 1px);
+  top: calc(1591px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-247-size);
+  font-weight: var(--typo-247-weight);
+  line-height: var(--typo-247-line);
+  letter-spacing: var(--typo-247-letter);
+  color: var(--color-9c9ba6);
+}
+/* Fruit chips: Avocado, Apple, Blueberry, Broccoli, Orange, Walnut with labels */
+.chip-avocado { left: calc(1454px - var(--root-x)*1px); top: calc(1623px - var(--root-y)*1px); }
+.chip-avocado-label { left: calc(1456px - var(--root-x)*1px); top: calc(1680px - var(--root-y)*1px); }
+
+.chip-apple { left: calc(1516px - var(--root-x)*1px); top: calc(1623px - var(--root-y)*1px); }
+.chip-apple-label { left: calc(1526px - var(--root-x)*1px); top: calc(1680px - var(--root-y)*1px); }
+
+.chip-blueberry { left: calc(1578px - var(--root-x)*1px); top: calc(1623px - var(--root-y)*1px); }
+.chip-blueberry-label { left: calc(1577px - var(--root-x)*1px); top: calc(1680px - var(--root-y)*1px); }
+
+.chip-broccoli { left: calc(1640px - var(--root-x)*1px); top: calc(1623px - var(--root-y)*1px); }
+.chip-broccoli-label { left: calc(1643px - var(--root-x)*1px); top: calc(1680px - var(--root-y)*1px); }
+
+.chip-orange { left: calc(1702px - var(--root-x)*1px); top: calc(1623px - var(--root-y)*1px); }
+.chip-orange-label { left: calc(1707px - var(--root-x)*1px); top: calc(1680px - var(--root-y)*1px); }
+
+.chip-walnut { left: calc(1764px - var(--root-x)*1px); top: calc(1623px - var(--root-y)*1px); }
+.chip-walnut-label { left: calc(1770px - var(--root-x)*1px); top: calc(1680px - var(--root-y)*1px); }
+
+/* Details group */
+.details-group {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1713px - var(--root-y) * 1px);
+  width: 327px;
+  height: 126px;
+}
+.details-group .label {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1713px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-125-size);
+  font-weight: var(--typo-125-weight);
+  line-height: var(--typo-125-line);
+  color: var(--typo-125-color);
+}
+.details-group .textarea-box {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1736px - var(--root-y) * 1px);
+  width: 327px;
+  height: 103px;
+  background: var(--color-fdfdfd);
+  border: 1px solid var(--color-e8eaed);
+  border-radius: 8px; /* style_314 */
+}
+.details-group .text {
+  left: calc(1474px - var(--root-x) * 1px);
+  top: calc(1751px - var(--root-y) * 1px);
+  width: 287px;
+  height: 42px;
+  font-family: var(--font-sen);
+  font-size: var(--typo-121-size);
+  font-weight: var(--typo-121-weight);
+  line-height: var(--typo-121-line);
+  letter-spacing: var(--typo-121-letter);
+  color: var(--typo-121-color);
+}
+
+/* Bottom Save button group */
+.bottom-button-group {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1871px - var(--root-y) * 1px);
+  width: 327px;
+  height: 62px;
+}
+.bottom-button-group .button-bg {
+  left: calc(1454px - var(--root-x) * 1px);
+  top: calc(1871px - var(--root-y) * 1px);
+  width: 327px;
+  height: 62px;
+  background: var(--color-ff7622);
+  border-radius: 10px; /* style_111 */
+}
+.bottom-button-group .button-text {
+  left: calc(1551px - var(--root-x) * 1px);
+  top: calc(1891px - var(--root-y) * 1px);
+  font-family: var(--font-sen);
+  font-size: var(--typo-234-size);
+  font-weight: var(--typo-234-weight);
+  line-height: var(--typo-234-line);
+  color: var(--color-ffffff);
+}
+
+/* Absolute class application */
+.abs { position: absolute; }
